@@ -313,6 +313,13 @@
   .lit .j .hl { color: var(--accent); font-weight: 600; }
   .lit .ref.mine .yr, .lit .ref.mine .who { color: var(--accent); font-weight: 600; }
   .lit .ref.mine .j { color: var(--accent); opacity: 0.75; font-weight: 400; }
+  /* Literature beside a figure: the citations take the left, the figure the right */
+  .litwrap { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 0.9em; }
+  .litwrap .lit { flex: none; font-size: 0.68em; grid-template-columns: repeat(3, minmax(0, 1fr));
+                  grid-template-rows: repeat(4, auto); gap: 0.5em 2em; margin-top: -0.3em; }
+  .litwrap .lit .j { margin-top: 0.08em; }
+  .litwrap .figrow { flex: 1; min-height: 0; }
+  .lit .j .hl { white-space: nowrap; }
 
   /* Three threads side by side: heading, a few points, then a figure, quote or viewer underneath */
   .threads { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 0 2.2em; }
@@ -833,56 +840,79 @@
   <!-- Column-major order, so the years read down the left column and on down the right. -->
   <section class="slide" data-section="2">
     <h2>Tag artifacts in condensates: a growing literature</h2>
-    <div class="lit">
-      <div class="ref">
-        <span class="yr">2019</span>
-        <span class="who">Phase-separated protein dynamics are affected by fluorescent tag choice
-          <span class="j">Uebel &amp; Phillips &middot; microPublication Biology</span></span>
+    <div class="litwrap">
+      <div class="lit">
+        <div class="ref">
+          <span class="yr">2019</span>
+          <span class="who">Phase-separated protein dynamics are affected by fluorescent tag choice
+            <span class="j">Uebel &amp; Phillips &middot; microPublication Biology</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2024</span>
+          <span class="who">Fluorescent protein tagging promotes phase separation and alters the aggregation pathway of huntingtin exon-1
+            <span class="j">Pandey et al. &middot; J Biol Chem</span></span>
+        </div>
+        <div class="ref mine">
+          <span class="yr">2024</span>
+          <span class="who">Fluorescent protein tags affect the condensation properties of a phase-separating viral protein
+            <span class="j">Barkley et al. &middot; Mol Biol Cell</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2024</span>
+          <span class="who">Diverse effects of fluorescent labels on alpha-synuclein condensate formation during liquid-liquid phase separation
+            <span class="j">Ziaunys et al. &middot; Int J Biol Macromol &middot; <span class="hl">&alpha;-synuclein</span></span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2025</span>
+          <span class="who">Understanding how genetically encoded tags and crowding agents affect phase separation by heterochromatin protein HP1&alpha;
+            <span class="j">Zhou et al. &middot; Cell Reports Methods</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2025</span>
+          <span class="who">Fluorescent protein and peptide tags alter condensate formation and dynamics in vivo and in vitro
+            <span class="j">D&ouml;rner et al. &middot; EMBO Reports</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2025</span>
+          <span class="who">The dark side of fluorescent protein tagging: the impact of protein tags on biomolecular condensation
+            <span class="j">Fatti, Khawaja &amp; Weis &middot; Mol Biol Cell</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2026</span>
+          <span class="who">Charge characteristics of fluorescent proteins modulate FUS LCD condensation
+            <span class="j">Lee et al. &middot; Biophysical Journal</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2026</span>
+          <span class="who">Biomolecular condensates provide a unique environment for redox-mediated protein crosslinking
+            <span class="j">Wang et al. &middot; bioRxiv &middot; tag drives the crosslinking</span></span>
+        </div>
+        <div class="ref recent">
+          <span class="yr">2026</span>
+          <span class="who">Green fluorescent protein and its fusion constructs induce intracellular puncta under defined conditions
+            <span class="j">Kono et al. &middot; Scientific Reports &middot; <span class="hl">&alpha;-synuclein</span>, tau and FUS</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2026</span>
+          <span class="who">Fluorescent proteins that faithfully reflect the native architecture of chloroplast nucleoids in <i>Chlamydomonas reinhardtii</i>
+            <span class="j">Kanazawa et al. &middot; Plant Biotechnology</span></span>
+        </div>
+        <div class="ref">
+          <span class="yr">2026</span>
+          <span class="who">The effect of protein tagging on aggregation and phase separation
+            <span class="j">Saito &amp; Sugase &middot; J Cell Biochem &middot; review &middot; <span class="hl">&alpha;-synuclein</span></span></span>
+        </div>
       </div>
-      <div class="ref">
-        <span class="yr">2024</span>
-        <span class="who">Fluorescent protein tagging promotes phase separation and alters the aggregation pathway of huntingtin exon-1
-          <span class="j">Pandey et al. &middot; J Biol Chem</span></span>
-      </div>
-      <div class="ref mine">
-        <span class="yr">2024</span>
-        <span class="who">Fluorescent protein tags affect the condensation properties of a phase-separating viral protein
-          <span class="j">Barkley et al. &middot; Mol Biol Cell</span></span>
-      </div>
-      <div class="ref">
-        <span class="yr">2025</span>
-        <span class="who">Understanding how genetically encoded tags and crowding agents affect phase separation by heterochromatin protein HP1&alpha;
-          <span class="j">Zhou et al. &middot; Cell Reports Methods</span></span>
-      </div>
-      <div class="ref">
-        <span class="yr">2025</span>
-        <span class="who">Fluorescent protein and peptide tags alter condensate formation and dynamics in vivo and in vitro
-          <span class="j">D&ouml;rner et al. &middot; EMBO Reports</span></span>
-      </div>
-      <div class="ref">
-        <span class="yr">2025</span>
-        <span class="who">The dark side of fluorescent protein tagging: the impact of protein tags on biomolecular condensation
-          <span class="j">Fatti, Khawaja &amp; Weis &middot; Mol Biol Cell</span></span>
-      </div>
-      <div class="ref">
-        <span class="yr">2026</span>
-        <span class="who">Charge characteristics of fluorescent proteins modulate FUS LCD condensation
-          <span class="j">Lee et al. &middot; Biophysical Journal</span></span>
-      </div>
-      <div class="ref">
-        <span class="yr">2026</span>
-        <span class="who">Biomolecular condensates provide a unique environment for redox-mediated protein crosslinking
-          <span class="j">Wang et al. &middot; bioRxiv &middot; exciting the tag drives the crosslinking</span></span>
-      </div>
-      <div class="ref recent">
-        <span class="yr">2026</span>
-        <span class="who">Green fluorescent protein and its fusion constructs induce intracellular puncta under defined conditions
-          <span class="j">Kono et al. &middot; Scientific Reports &middot; <span class="hl">&alpha;-synuclein</span>, tau and FUS</span></span>
-      </div>
-      <div class="ref">
-        <span class="yr">2026</span>
-        <span class="who">Fluorescent proteins that faithfully reflect the native architecture of chloroplast nucleoids in <i>Chlamydomonas reinhardtii</i>
-          <span class="j">Kanazawa et al. &middot; Plant Biotechnology</span></span>
+      <!-- Figure 4 of Ziaunys et al. (2024) and a figure from Doerner et al. (2025), side by side under the citations. -->
+      <div class="figrow oneline">
+        <figure data-ratio="2.4">
+          <img src="figures/ziaunys-2024-fig4.png" alt="Figure 4 from Ziaunys et al. 2024">
+          <figcaption>Ziaunys et al. (2024). Int J Biol Macromol. Figure 4.</figcaption>
+        </figure>
+        <figure data-ratio="2.4">
+          <img src="figures/embo.png" alt="Figure from D&ouml;rner et al.">
+          <figcaption>D&ouml;rner et al. (2025). EMBO Reports.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
