@@ -469,19 +469,9 @@
 	<p>October 19, 2026</p>
       </div>
     </div>
-    <!-- The mosaic fills the right side of the title page: a live figure to try before the talk starts. -->
+    <!-- The collage video fills the right side of the title page and loops. -->
     <div class="title-media">
-      <div class="viewer">
-        <template>
-          <find-nuclei-viewer
-            id="fig-mosaic"
-            url="https://nyu1.osn.mghpcc.org/barkley-replication/nuclei_mosaic.zarr"
-            channels="0:on:FFFFFF:0:240"
-          ></find-nuclei-viewer>
-        </template>
-        <!-- Still image for the offline copy; press S on the live slide to save it. -->
-        <img class="still" loading="lazy" src="stills/fig-mosaic.png" alt="Mosaic of nuclei">
-      </div>
+      <div class="figure fill"><video src="figures/title.mp4" loop muted playsinline preload="auto"></video></div>
     </div>
   </section>
 
@@ -500,10 +490,6 @@
           <p>Tag artifacts documented across many systems</p>
           <p>Including &alpha;-synuclein and tau</p>
         </div>
-      </div>
-      <!-- The collage video fills the right side of the slide and loops. -->
-      <div class="outline-media">
-        <div class="figure fill"><video src="figures/title.mp4" loop muted playsinline preload="auto"></video></div>
       </div>
     </div>
   </section>
